@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+<div class="row">
+    <div class="col-md-9">
+        <div class="tab-content">
+    {% for i in index %}
+            <marquee><h2 style="dispaly:block;width:100%;white-space:nowrap;overflow:hidden;color:#ff3c41">
+                <span style="display:inline-block;padding-left=100%"> {{i.mar1}}</span></h2></marquee>
+           {% endfor %}
+</div>
+    </div>
+</div>
+<!--
+<div class="header_w3layouts_agile-main">
+
+<div class="slider" style="float:left">
+
+			<div class="callbacks_container">
+
+				<ul class="rslides callbacks callbacks1" id="slider4">
+					<li>
+						<div class="banner-top">
+							<div class="banner-info">
+								<h3>Enhance the quality of education</h3>
+							</div>
+
+						</div>
+					</li>
+					<li>
+						<div class="banner-top1">
+							<div class="banner-info">
+								<h3>Passionate and powerful advocate </h3>
+                            </div>
+
+						</div>
+					</li>
+					<li>
+						<div class="banner-top2">
+							<div class="banner-info">
+								<h3>Promote human and civil rights </h3>
+							</div>
+
+						</div>
+					</li>
+					<li>
+						<div class="banner-top3">
+							<div class="banner-info">
+								<h3>Preeminent voice for educators</h3>
+                            </div>
+
+						</div>
+					</li>
+				</ul>
+
+			</div>
+    <div class="clearfix"> </div>
+
+
+			<!--banner Slider starts Here
+</div>
+</div>
+-->
+
+<div class="w3-content w3-section" style="max-width:100%;bgcolor:">
+  <img class="mySlides" src="{% static 'images/1.jpg' %}" style="width:1150px;height:600px">
+  <img class="mySlides" src="{% static 'images/2.jpg' %}" style="width:1150px;height:600px">
+  <img class="mySlides" src="{% static 'images/3.jpg' %}" style="width:1150px;height:600px">
+</div>
+
+
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 2500); // Change image every 2 seconds
+}
+</script>
+
+	<!--what-we-do-->
+	<div class="top_spl_courses">
+		<div class="container">
+			<h3 class="header_w3layouts_agile">Special Occasions</h3>
+			<div class="inner_sec_w3_agileinfo">
+				<ul class="timeline">
+					<li class="one-tm">
+						<div class="timeline-image">
+							<img class="img-circle img-responsive"  style="height:100%" src="{% static 'images/small.jpg' %}" alt="">
+						</div>
+						<div class="timeline-panel" data-aos="fade-left">
+							<div class="timeline-heading">
+								<h4>Mon Feb 19, 2018 </h4>
+
+								<h4 class="subheading">Foundation</h4>
+							</div>
+							<div class="timeline-body">
+								<p class="text-muted">
+									The idea and the efforts for uniting teachers to effectively represent their grievances and just
+									demands to their authorities were seriously initiated during the struggle for independence by the
+									teacher leaders of that time.</div>
+						</div>
+						<div class="line"></div>
+					</li>
+
+					<li class="timeline-inverted">
+						<div class="timeline-image">
+							<img class="img-circle img-responsive" style="height:100%"src="{% static 'images/med.jpg' %}" alt="">
+						</div>
+						<div class="timeline-panel t-m" data-aos="fade-right">
+							<div class="timeline-heading">
+								<h4>Thu Feb 22, 2018 </h4>
+
+								<h4 class="subheading">Established</h4>
+							</div>
+							<div class="timeline-body">
+								<p class="text-muted">
+									 So the idea of setting up an organization of primary teachers at the national level came to the minds of leaders, and after serious deliberations and exchange of ideas of consultation among the leaders, a National level body of primary teachers came into existence.
+									This is the Walchand Teachers Association (WCE Meta).</p>
+							</div>
+						</div>
+						<div class="line"></div>
+					</li>
+					<li>
+						<div class="timeline-image">
+							<img class="img-circle img-responsive" style="height:100%" src="{% static 'images/lar.jpg' %}" alt="">
+						</div>
+						<div class="timeline-panel" data-aos="fade-left">
+							<div class="timeline-heading">
+								<h4>Fri Feb 23, 2018 </h4>
+
+								<h4 class="subheading">Till Date</h4>
+							</div>
+							<div class="timeline-body">
+								<p class="text-muted">
+									Lorem ipsum dolor sit amet, do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+								</p>
+							</div>
+						</div>
+					</li>
+					<div classs="clearfix"></div>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--//timeline-->
+
+
+{% endblock %}

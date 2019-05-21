@@ -1,0 +1,29 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="page-header">
+    <h1>{{ title }}</h1>
+</div>
+<!--<div class="banner_bottom">
+<div class="container">
+<div class="inner_sec_w3_agileinfo">
+<div class="col-md-4 col-sm-4 col-xs-4 gal-sec" data-aos="zoom-in">-->
+
+
+            {% for image1 in images %}
+            <div class="responsive">
+            <div class="gallery">
+            {% if forloop.counter0 == 0 %}
+            {% endif %}
+            <!--<h3>{{ image1.title }}</h3>-->
+            <a target="_blank" href="{{ image1.image.url }}">
+                <img src="{{ image1.image.url }}" alt=" " width="800" height="600">
+            </a>
+            <div class="desc">{{ image1.description }}</div>
+             </div>
+            </div>
+            {% endfor %}
+
+<div class="clearfix"></div>
+{% endblock %}

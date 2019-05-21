@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="page-header">
+    <h1>{{ title }}</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-9">
+        <div class="tab-content">
+            {% for meeting in meetings %}
+            <div id="{{ meeting.no }}" class="tab-pane fade
+            {% if forloop.counter0 == 0 %}
+            in active
+            {% endif %}">
+            <h2 >{{ meeting.topic }}</h2>
+            <p>{{ meeting.summary }}</p>
+                <h3>Agenda</h3>
+            <p>{{ meeting.agenda }}</p>
+            <br>
+                <h5>{{meeting.date|date:"Y-m-d"}}</h5>
+             </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+            {% for meeting in meetings %}
+            <li
+            {% if forloop.counter0 == 0 %}
+            class="active"
+            {% endif %}
+            >
+                <a data-toggle="pill" href="#{{meeting.no}}">{{meeting.date}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+
+{% endblock %}

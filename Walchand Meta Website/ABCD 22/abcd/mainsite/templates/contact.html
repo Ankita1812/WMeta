@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="banner_bottom">
+		<div class="container">
+			<div class="tittle_head">
+				<h3 class="header_w3layouts_agile">Contact Us </h3>
+			</div>
+			<div class="inner_sec_w3_agileinfo">
+				<div class="col-md-8 map" data-aos="fade-left">
+					<iframe width="300px" height="250px" src="https://maps.google.it/maps?q=Walchand College Of Engineering, Sangli, Maharashtra&amp;output=embed" frameborder="0"></iframe>
+				</div>
+
+				<center>
+				<div class="col-md-4 contact_grids_info">
+
+
+					<div class="contact_grid"  data-aos="fade-up">
+
+
+
+						<div class="contact_grid_right">
+							<h4>Walchand College of Engineering</h4>
+							<p>Sangli - Miraj Road, Vishrambag,<br> Government Colony</p>
+							<p>Sangli,416415</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="clearfix"> </div>
+				</center></div>
+
+
+<div class="mail_form">
+				<h3 class="header_w3layouts_agile">Send Us a Message</h3>
+				<div class="inner_sec_w3_agileinfo">
+					<form action='.' method="POST">
+                        {% csrf_token%}
+
+                <hr/>
+                <div>
+                    <span class="name2"><label for="name">Name:</label>
+                    <input type="text" id="name" name="user_name" ></span>
+                    <span class="name2">
+                    <label for="mail" style="algin:center;">Email:</label>
+                    <input type="email" id="mail" name="user_email"></span>
+                    <span class="name2">
+                    <label for="subject">Subject:</label>
+                    <input type="subject" id="subject" name="user_subject"></span>
+                     </div>
+                <hr/>
+                <div>
+                <span class="comment">
+                 <label for="msg">Comment:</label>
+                <br/>
+                 <div class="cm"> <textarea id="msg" name="user_message" rows="10" cols="50" ></textarea></div>
+
+                </span>
+
+                 </div>
+
+                <input type="submit" value="Submit" style="font-size:18px;"/>
+                    <hr/>
+            </form>
+
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+
+		</div>
+	</div>
+
+
+{% endblock %}
+

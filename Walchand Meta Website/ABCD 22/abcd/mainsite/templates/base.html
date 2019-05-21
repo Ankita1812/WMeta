@@ -1,0 +1,438 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>{{ title }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- Latest compiled and minified CSS -->
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none;}
+</style>
+
+<link href={% static '/css/style.css' %} rel='stylesheet' type='text/css' />
+<link href={% static '/css/team.css' %} rel='stylesheet' type='text/css' />
+
+<link href={% static '/css/contact.css' %} rel='stylesheet' type='text/css' />
+<link href={% static '/css/font-awesome.css' %} rel='stylesheet' type='text/css' />
+<link href={% static '/css/chocolate.css' %} rel='stylesheet' type='text/css' />
+<link href={% static '/css/bootstrap.css' %} rel='stylesheet' type='text/css' />
+<link href={% static '/css/aos-animation.css' %} rel='stylesheet' type='text/css' />
+<link href={% static '/css/aos.css' %} rel='stylesheet' type='text/css' />
+<link href={% static '/css/about.css' %} rel='stylesheet' type='text/css' />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://getbootstrap.com/examples/sticky-footer-navbar/sticky-footer-navbar.css">
+    <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <style>
+body {
+    background-color: rgb(229, 245, 249);
+}
+</style>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script></head>
+<body>
+<nav>	<!--/top-bar-->
+	<div class="top-bar_sub_w3ls_agileits ">
+		<h6>
+			<i class="fa fa-phone" aria-hidden="true"></i> Call Us : 9423268510
+			<a href="/contact">Contact</a>
+		</h6>
+
+		<div class="search">
+
+                <ul>{% if user.is_authenticated %}
+					<a class="nav-item nav-link" href="{% url 'logout' %}" style="color:white;font-size:20px"><span class="glyphicon glyphicon-log-in"></span>Logout</a>
+					{% else %}
+			<li class="dropdown">
+
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;font-size:20px" data-hover="Pages" role="button" aria-haspopup="true" aria-expanded="false">
+					<span class="glyphicon glyphicon-log-in"></span>
+						Login
+
+				</a>
+				<ul class="dropdown-menu">
+
+					<li >
+						<a href="/admin/login/?next=/admin/"><span class="glyphicon glyphicon-pencil"></span> Admin</a>
+					</li>
+					<li>
+						<a href="/login/"><span class="glyphicon glyphicon-bell"></span> Member</a>
+						{% endif %}
+                    </li>
+                </ul>
+			</li></ul>
+
+
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+	<!-- topbar-->
+		<!-- Modal1 -->
+	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header_w3layouts_agile">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+					<div class="signin-form profile">
+
+						<div class="login-m_page_img">
+
+							<img src="C:\Users\ankichan\Desktop\abcd 1\abcd\mainsite\templates\app.png" alt=" Image " class="img-responsive" />
+
+						</div>
+						<div class="login-m_page">
+							<h3 class="sign">Sign In</h3>
+							<div class="login-form">
+								<form action="/admin/login/?next=/admin/" method="post">
+									<input type="email" name="email" placeholder="E-mail" required="">
+									<input type="password" name="password" placeholder="Password" required="">
+									<div class="tp">
+										<input type="submit" value="Sign In">
+									</div>
+								</form>
+							</div>
+							<div class="login-social-grids">
+								<ul>
+									<li>
+										<a href="https://www.facebook.com">
+											<i class="fa fa-facebook"></i>
+										</a>
+									</li>
+									<li>
+										<a href="https://twitter.com/login?lang=en">
+											<i class="fa fa-twitter"></i>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="fa fa-rss"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--sign in-->
+</nav>
+
+    <nav class="navbar navbar-default">
+        <div class="">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+				<p><img src="{% static 'images/logo.jpg' %}" style="width:240px;height:60px"></p>
+            </div>
+
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav" style="align:centre;background-color:#f1f1f1">
+                    <li style="display: block;
+    color: #fff;
+
+    text-decoration: none;"> <a href="/" ><span class="glyphicon glyphicon-home"></span>  Home</a></li>
+
+
+                    <li class="dropdown" style="display: block;
+    color: #fff;
+
+    text-decoration: none;">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="Pages" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-bullhorn"></span> Talks
+
+									</a>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="/post"><span class="glyphicon glyphicon-pencil"></span> Blog</a>
+										</li>
+										<li>
+											<a href="/meeting"><span class="glyphicon glyphicon-bell"></span> Meetings</a>
+										</li>
+									</ul>
+								</li>
+					<li style="display: block;
+    color: #fff;
+
+    text-decoration: none;">
+						{% if user.is_authenticated %}
+						<a href="/forum"><span class="glyphicon glyphicon-pushpin"></span>Discuss</a></li>
+
+										{% endif %}
+                    <li style="display: block;
+    color: #fff;
+
+    text-decoration: none;"><a href="/gallery"><span class="glyphicon glyphicon-camera"></span> Gallery</a></li>
+                    <li style="display: block;
+    color: #fff;
+
+    text-decoration: none;"><a href="/member"><span class="glyphicon glyphicon-user"></span> Members</a></li>
+					<li style="display: block;
+    color: #fff;
+
+    text-decoration: none;"><a href="/about"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
+
+
+
+                    <li style="display: block;
+    color: #fff;
+
+    text-decoration: none;"><a href="/contact"> <span class="glyphicon glyphicon-phone-alt"></span> Contact</a></li>
+     <li style="display: block;
+    color: #fff;
+
+    text-decoration: none;">{% if user.is_authenticated %}
+		 <a class="nav-item nav-link" href="{% url 'profile' %}"><span class="glyphicon glyphicon-cog"></span> Profile</a></li>
+					{% if user.is_superuser %}
+					<li><a href="/send"><span class="glyphicon glyphicon-send"></span> Send</a></li>
+</li>
+	<li><a href="/admin/login/?next=/admin/"><span class="glyphicon glyphicon-cog"></span>Admin</a></li>
+</li>				{% endif %}
+					{% endif %}
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+	<!-- //js -->
+<script type="text/javascript" src="{% static 'js/jquery.chocolat.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.countup.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
+
+	<script src="{% static 'js/aos.js' %}"></script>
+	<script src="{% static 'js/aosindex.js' %}"></script>
+	<!-- //js files -->
+	<script src="{% static 'js/main.js"></script>
+	<script src="{% static 'js/responsiveslides.min.js' %}"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 900);
+			});
+		});
+	</script>
+	<!-- start-smoth-scrolling -->
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			/*
+									var defaults = {
+							  			containerID: 'toTop', // fading element id
+										containerHoverID: 'toTopHover', // fading element hover id
+										scrollSpeed: 1200,
+										easingType: 'linear'
+							 		};
+									*/
+
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+
+		});
+	</script>
+		<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+
+	<script>
+		$(function () {
+			$("#slider4").responsiveSlides({
+				auto: true,
+				pager: true,
+				nav: false,
+				speed: 1000,
+				namespace: "callbacks",
+				before: function () {
+					$('.events').append("<li>before event fired.</li>");
+				},
+				after: function () {
+					$('.events').append("<li>after event fired.</li>");
+				}
+			});
+		});
+	</script>
+
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+
+
+
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+	<!--/tesimonials-->
+	<!--/tesimonials-->
+	<div class="tesimonials">
+		<div class="container">
+			<h3 class="header_w3layouts_agile two">Table Talks</h3>
+			<div class="inner_sec_w3_agileinfo">
+				<div class="test_grid_sec">
+					<div class="col-md-offset-2 col-md-8">
+						<div class="carousel slide two" data-ride="carousel" id="quote-carousel">
+							<!-- Bottom Carousel Indicators -->
+							<ol class="carousel-indicators two">
+								<li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
+								<li data-target="#quote-carousel" data-slide-to="1"></li>
+								<li data-target="#quote-carousel" data-slide-to="2"></li>
+							</ol>
+
+							<!-- Carousel Slides / Quotes -->
+							<div class="carousel-inner">
+
+								<!-- Quote 1 -->
+								<div class="item active">
+									<blockquote>
+										<div class="test_grid">
+											<div class="col-sm-3 text-center test_img" data-aos="fade-down">
+												<i class="fa fa-user" aria-hidden="true"></i>
+
+											</div>
+											<div class="col-sm-9 test_img_info" data-aos="fade-up">
+												<p>“Education is not to reform students or amuse them or to make them expert technicians.
+													It is to unsettle their minds, widen their horizons, inflame their intellects, teach them to think straight, if possible</p>
+												<h6>G.V.Parishwad</h6>
+											</div>
+										</div>
+									</blockquote>
+								</div>
+								<!-- Quote 2 -->
+								<div class="item">
+									<blockquote>
+										<div class="test_grid">
+											<div class="col-sm-3 text-center test_img" data-aos="fade-down">
+												<i class="fa fa-user" aria-hidden="true"></i>
+											</div>
+											<div class="col-sm-9 test_img_info" data-aos="fade-up">
+												<p>Ideal teachers are those who use themselves as bridges over which they invite their students to cross, then having facilitated
+													their crossing, joyfully collapse, encouraging them to create bridges of their own</p>
+												<h6>R.R.Rathod</h6>
+											</div>
+										</div>
+									</blockquote>
+								</div>
+								<!-- Quote 3 -->
+								<div class="item">
+									<blockquote>
+										<div class="test_grid">
+											<div class="col-sm-3 text-center test_img" data-aos="fade-down">
+												<i class="fa fa-user" aria-hidden="true"></i>
+											</div>
+											<div class="col-sm-9 test_img_info" data-aos="fade-up">
+												<p>Education is the key to success in life, and teachers make a lasting impact in the lives of their students.</p>
+												<h6>U.B.Chavan</h6>
+											</div>
+										</div>
+									</blockquote>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+        <footer class="contact-footer">
+		<div class="bottom-social">
+			<div class="container">
+				<div class="col-md-8 botttom-nav-w3ls-agile">
+					<ul class="f_links col-md-4" data-aos="zoom-in">
+						<li>
+							<a href="/">Home</a>
+						</li>
+						<li>
+							<a href="/about">About</a>
+						</li>
+						<li>
+							<a href="/gallery">Gallery</a>
+						</li>
+						</ul>
+					<ul class="f_links col-md-4" data-aos="zoom-in">
+						<li>
+							<a href="/blog">Blog</a>
+						</li>
+                        <li>
+							<a href="/meeting">Meetings</a>
+						</li>
+						<li>
+							<a href="/member">Members</a>
+						</li>
+
+					</ul>
+					<ul class="f_links thrd col-md-4" data-aos="zoom-in">
+						<li>
+							<a href="404.html">Discussion</a>
+						</li>
+                        <li>
+							<a href="/contact">Contact</a>
+						</li>
+
+
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+				<div class="col-md-4 social-icons" data-aos="zoom-in">
+					<h6>Connect with us</h6>
+					<a class="facebook" href="https://www.facebook.com">
+						<span class="fa fa-facebook"></span>
+					</a>
+					<a class="twitter" href="https://twitter.com/login?lang=en">
+						<span class="fa fa-twitter"></span>
+					</a>
+					<a class="pinterest" href="https://in.pinterest.com/">
+						<span class="fa fa-pinterest-p"></span>
+					</a>
+					<a class="linkedin" href="https://in.linkedin.com/">
+						<span class="fa fa-linkedin"></span>
+					</a>
+				</div>
+				<div class="clearfix"></div>
+
+			</div>
+		</div>
+
+
+
+			<div class="copy">
+			<h2 class="footer-logo">
+				<span style="color:white">Walchand Teachers Association </span>
+			</h2>
+			 <p>© WCE META All rights reserved | Design by
+				<a href="http://walchandsangli.ac.in/"> Walchand College of Engineering,Sangli</a>
+			</p>
+         <div class="clearfix"></div>
+		</div>
+    </footer>
+</body>
+</html>
